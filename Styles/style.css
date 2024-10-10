@@ -1,4 +1,8 @@
 
+#nav {
+    background-color: hsl(0, 0%, 100%);
+}
+
 #head {
     display: flex;
     justify-content: space-between;
@@ -21,21 +25,4 @@
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 4vw;
-}
-
-.card-body {
-}
-
-.c-body {
-    padding: 0;
-    padding: 2vw;
-}
-
-#c-body h5 {
-    margin-bottom: 10px;
-}
-
-#c-body p {
-    margin: 0;
-    margin-top: 3px;
 }

@@ -10,11 +10,11 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-body-tertiary">
 
-    <nav class="navbar bg-body-tertiary" id="nav">
+    <nav class="navbar py-3 border-bottom border-2" id="nav">
         <div class="container">
-            <span class="navbar-brand mb-0 h1">NationWise</span>
+            <span class="navbar-brand mb-0 h1"><b>NationWise</b></span>
         </div>
     </nav>
 
@@ -23,19 +23,19 @@
         <div class="mt-5" id="head">
 
             <div class="input-group flex-nowrap w-50 h-100">
-                <span class="input-group-text" id="addon-wrapping">
+                <span class="input-group-text border border-0 bg-white shadow-sm" id="addon-wrapping">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search" viewBox="0 0 16 16">
                         <path
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                     </svg>
                 </span>
-                <input type="text" class="form-control" placeholder="Search for a country..." aria-label="Username"
+                <input type="text" class="form-control border border-0 shadow-sm" placeholder="Search for a country..." aria-label="Username"
                     aria-describedby="addon-wrapping">
             </div>
 
             <div class="dropdown" id="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                <button class="btn btn-secondary dropdown-toggle border border-0 shadow-sm" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     Filter by Region
                 </button>
@@ -48,46 +48,58 @@
         </div>
 
         <div class="mt-5" id="flags">
-            <div class="card" style="width: 18rem;">
+            <div class="card border border-0 shadow-sm" style="width: 18rem;">
                 <img src="https://flagcdn.com/w320/af.png" class="card-img-top" alt="img">
-                <div class="card-body c-body">
-                    <h5><b>India</b></h5>
-                    <p class="card-text"> <b>Population:</b> <span class="population">Some quick example </span> <br> <b>Region:</b> <span id="region">Some quick example</span> <br> <b>Capital:</b> <span id="capital">Some quick example</span> </p>
+                <div class="card-body c-body px-4">
+                    <h5 class="mt-2"><b>India</b></h5>
+                    <p class="card-text mb-1 mt-3"> <b>Population:</b> <span class="population">Some quick example </span> </p>
+                    <p class="card-text mb-1"> <b>Region:</b> <span class="region">Some quick example</span> </p>
+                    <p class="card-text mb-4"> <b>Capital:</b> <span class="capital">Some quick example</span> </p>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;">
+            <div class="card border border-0 shadow-sm" style="width: 18rem;">
                 <img src="https://flagcdn.com/w320/af.png" class="card-img-top" alt="img">
-                <div class="card-body c-body">
-                    <h5><b>India</b></h5>
-                    <p class="card-text"> <b>Population:</b> <span class="population">Some quick example </span> <br> <b>Region:</b> <span id="region">Some quick example</span> <br> <b>Capital:</b> <span id="capital">Some quick example</span> </p>
+                <div class="card-body c-body px-4">
+                    <h5 class="mt-2"><b>India</b></h5>
+                    <p class="card-text mb-1 mt-3"> <b>Population:</b> <span class="population">Some quick example </span> </p>
+                    <p class="card-text mb-1"> <b>Region:</b> <span class="region">Some quick example</span> </p>
+                    <p class="card-text mb-4"> <b>Capital:</b> <span class="capital">Some quick example</span> </p>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;">
+            <div class="card border border-0 shadow-sm" style="width: 18rem;">
                 <img src="https://flagcdn.com/w320/af.png" class="card-img-top" alt="img">
-                <div class="card-body c-body">
-                    <h5><b>India</b></h5>
-                    <p class="card-text"> <b>Population:</b> <span class="population">Some quick example </span> <br> <b>Region:</b> <span id="region">Some quick example</span> <br> <b>Capital:</b> <span id="capital">Some quick example</span> </p>
+                <div class="card-body c-body px-4">
+                    <h5 class="mt-2"><b>India</b></h5>
+                    <p class="card-text mb-1 mt-3"> <b>Population:</b> <span class="population">Some quick example </span> </p>
+                    <p class="card-text mb-1"> <b>Region:</b> <span class="region">Some quick example</span> </p>
+                    <p class="card-text mb-4"> <b>Capital:</b> <span class="capital">Some quick example</span> </p>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;">
+            <div class="card border border-0 shadow-sm" style="width: 18rem;">
                 <img src="https://flagcdn.com/w320/af.png" class="card-img-top" alt="img">
-                <div class="card-body c-body">
-                    <h5><b>India</b></h5>
-                    <p class="card-text"> <b>Population:</b> <span class="population">Some quick example </span> <br> <b>Region:</b> <span id="region">Some quick example</span> <br> <b>Capital:</b> <span id="capital">Some quick example</span> </p>
+                <div class="card-body c-body px-4">
+                    <h5 class="mt-2"><b>India</b></h5>
+                    <p class="card-text mb-1 mt-3"> <b>Population:</b> <span class="population">Some quick example </span> </p>
+                    <p class="card-text mb-1"> <b>Region:</b> <span class="region">Some quick example</span> </p>
+                    <p class="card-text mb-4"> <b>Capital:</b> <span class="capital">Some quick example</span> </p>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;">
+            <div class="card border border-0 shadow-sm" style="width: 18rem;">
                 <img src="https://flagcdn.com/w320/af.png" class="card-img-top" alt="img">
-                <div class="card-body c-body">
-                    <h5><b>India</b></h5>
-                    <p class="card-text"> <b>Population:</b> <span class="population">Some quick example </span> <br> <b>Region:</b> <span id="region">Some quick example</span> <br> <b>Capital:</b> <span id="capital">Some quick example</span> </p>
+                <div class="card-body c-body px-4">
+                    <h5 class="mt-2"><b>India</b></h5>
+                    <p class="card-text mb-1 mt-3"> <b>Population:</b> <span class="population">Some quick example </span> </p>
+                    <p class="card-text mb-1"> <b>Region:</b> <span class="region">Some quick example</span> </p>
+                    <p class="card-text mb-4"> <b>Capital:</b> <span class="capital">Some quick example</span> </p>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;">
+            <div class="card border border-0 shadow-sm" style="width: 18rem;">
                 <img src="https://flagcdn.com/w320/af.png" class="card-img-top" alt="img">
-                <div class="card-body c-body">
-                    <h5><b>India</b></h5>
-                    <p class="card-text"> <b>Population:</b> <span class="population">Some quick example </span> <br> <b>Region:</b> <span id="region">Some quick example</span> <br> <b>Capital:</b> <span id="capital">Some quick example</span> </p>
+                <div class="card-body c-body px-4">
+                    <h5 class="mt-2"><b>India</b></h5>
+                    <p class="card-text mb-1 mt-3"> <b>Population:</b> <span class="population">Some quick example </span> </p>
+                    <p class="card-text mb-1"> <b>Region:</b> <span class="region">Some quick example</span> </p>
+                    <p class="card-text mb-4"> <b>Capital:</b> <span class="capital">Some quick example</span> </p>
                 </div>
             </div>
         </div>
