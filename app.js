@@ -1,4 +1,5 @@
 const flagsDiv = document.querySelector("#flags");
+const regionDropdown = document.querySelector("#region-dropdown");
 
 
 // Fetching Data
@@ -18,7 +19,7 @@ let checkNull = (data) => {
 }
 
 
-let populateAllData = (data) => {
+let populateData = (data) => {
     let str = "";
 
     data.forEach((obj) => {
@@ -45,5 +46,48 @@ let populateAllData = (data) => {
 
 window.addEventListener("load", async () => {
     data = await getData();
-    populateAllData(data);
+    populateData(data);
+    getAllRegions(data);
+    populateRegions(regions);
+    filterByRegion()
 })
+
+
+// Filter by Region logic
+const regions = new Set();
+
+let getAllRegions = (data) => {
+    data.forEach((obj) => {
+        regions.add(obj.region);
+    })
+}
+
+let populateRegions = (regions) => {
+    let str = `<li><a class="dropdown-item" href="#">All</a></li>`;
+
+    regions.forEach((region) => {
+        str += `<li><a class="dropdown-item" href="#">${region}</a></li>`;
+    })
+
+    regionDropdown.innerHTML = str;
+}
+
+let filterByRegion = () => {
+    const regionList = document.querySelectorAll("li");
+
+    regionList.forEach((e) => {
+        e.addEventListener("click", () => {
+            let region = e.innerText;
+            if(region === "All") {
+                populateData(data);
+            }
+            else {
+                let reginalData = data.filter((obj) => {
+                    return obj.region === region;
+                })
+                populateData(reginalData);
+            }
+        })
+    })
+
+}
