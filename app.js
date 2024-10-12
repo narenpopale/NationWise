@@ -1,5 +1,6 @@
 const flagsDiv = document.querySelector("#flags");
 const regionDropdown = document.querySelector("#region-dropdown");
+const input = document.querySelector("input");
 
 
 let data;
@@ -44,7 +45,7 @@ let displayData = (data) => {
 }
 
 
-// Region Data logic
+// Regional Data logic
 const regions = new Set();
 
 let getAllRegions = (data) => {
@@ -86,10 +87,50 @@ let filterByRegion = () => {
 }
 
 
-let displayRegionalData = () => {
+const displayRegionalData = () => {
     getAllRegions(data);
     displayRegions(regions);
     filterByRegion()
+}
+
+
+// Country Search Logic
+const checkCondition = (val, key) => {
+    
+    switch (key) {
+        case "Enter":
+            break;
+        case "CapsLock":
+            break;
+        case "Shift":
+            break;
+        case "Control":
+            break;
+        case "Backspace":
+            val = val.slice(0, val.length - 1);
+            break;
+        default:
+            val += key;
+            break;
+    }
+
+    return val;
+}
+
+
+const searchByName = () => {
+
+    input.addEventListener("keydown", (e) => {
+        let val = input.value;
+        val = checkCondition(val, e.key);
+
+        let filteredData = data.filter((obj) => {
+            return obj.name.toLowerCase().includes(val.toLowerCase());
+        })
+
+        displayData(filteredData);
+    })
+
 }
 
 
@@ -97,4 +138,5 @@ window.addEventListener("load", async () => {
     data = await getData();
     displayData(data);
     displayRegionalData();
+    searchByName();
 })
