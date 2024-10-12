@@ -2,9 +2,10 @@ const flagsDiv = document.querySelector("#flags");
 const regionDropdown = document.querySelector("#region-dropdown");
 
 
-// Fetching Data
 let data;
 
+
+// Utility Functions
 let getData = async () => {
     let promise = await fetch("./data.json");
     let data = await promise.json();
@@ -12,14 +13,13 @@ let getData = async () => {
 }
 
 
-// Displaying All Data
 let checkNull = (data) => {
     if(data) return data;
     else return "Not Available";
 }
 
 
-let populateData = (data) => {
+let displayData = (data) => {
     let str = "";
 
     data.forEach((obj) => {
@@ -44,16 +44,7 @@ let populateData = (data) => {
 }
 
 
-window.addEventListener("load", async () => {
-    data = await getData();
-    populateData(data);
-    getAllRegions(data);
-    populateRegions(regions);
-    filterByRegion()
-})
-
-
-// Filter by Region logic
+// Region Data logic
 const regions = new Set();
 
 let getAllRegions = (data) => {
@@ -62,9 +53,10 @@ let getAllRegions = (data) => {
     })
 }
 
-let populateRegions = (regions) => {
-    let str = `<li><a class="dropdown-item" href="#">All</a></li>`;
 
+let displayRegions = (regions) => {
+    let str = `<li><a class="dropdown-item" href="#">All</a></li>`;
+    
     regions.forEach((region) => {
         str += `<li><a class="dropdown-item" href="#">${region}</a></li>`;
     })
@@ -72,22 +64,37 @@ let populateRegions = (regions) => {
     regionDropdown.innerHTML = str;
 }
 
+
 let filterByRegion = () => {
     const regionList = document.querySelectorAll("li");
-
+    
     regionList.forEach((e) => {
         e.addEventListener("click", () => {
             let region = e.innerText;
             if(region === "All") {
-                populateData(data);
+                displayData(data);
             }
             else {
-                let reginalData = data.filter((obj) => {
+                let regionalData = data.filter((obj) => {
                     return obj.region === region;
                 })
-                populateData(reginalData);
+                displayData(regionalData);
             }
         })
     })
 
 }
+
+
+let displayRegionalData = () => {
+    getAllRegions(data);
+    displayRegions(regions);
+    filterByRegion()
+}
+
+
+window.addEventListener("load", async () => {
+    data = await getData();
+    displayData(data);
+    displayRegionalData();
+})
