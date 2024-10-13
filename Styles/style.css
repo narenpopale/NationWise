@@ -30,3 +30,7 @@
 img {
     height: 31vh;
 }
+
+#flags .card {
+    cursor: pointer;
+}

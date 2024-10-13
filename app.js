@@ -15,14 +15,9 @@ let getData = async () => {
 }
 
 
-let getCountry = (id) => {
+let navigatePage = (id) => {
     window.open("./Pages/nation-page.html", "_self");
-
-    let countryData = data.filter((obj) => {
-        return obj.numericCode === id;
-    })
-
-    localStorage.setItem("data",JSON.stringify(countryData));
+    localStorage.setItem("data",JSON.stringify(id));
 }
 
 
@@ -31,7 +26,7 @@ let getCards = () => {
     cards.forEach((card) => {
         card.addEventListener("click", () => {
             let id = card.getAttribute("id");
-            getCountry(id);
+            navigatePage(id);
         })
     })
 }
