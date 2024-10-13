@@ -15,11 +15,23 @@ let getData = async () => {
 }
 
 
+let getCountry = (id) => {
+    window.open("./Pages/nation-page.html", "_self");
+
+    let countryData = data.filter((obj) => {
+        return obj.numericCode === id;
+    })
+
+    localStorage.setItem("data",JSON.stringify(countryData));
+}
+
+
 let getCards = () => {
     cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
         card.addEventListener("click", () => {
-            console.log(card.getAttribute("id"));
+            let id = card.getAttribute("id");
+            getCountry(id);
         })
     })
 }
@@ -43,14 +55,14 @@ let displayData = (data) => {
         let id = obj.numericCode;
         
         str += `<div id="${id}" class="card border border-0 shadow-sm" style="width: 18rem;">
-                <img src="${flagUrl}" class="card-img-top" alt="img">
-                <div class="card-body c-body px-4">
-                    <h5 class="mt-2"><b>${name}</b></h5>
-                    <p class="card-text mb-1 mt-3"> <b>Population:</b> <span class="population">${population}</span> </p>
-                    <p class="card-text mb-1"> <b>Region:</b> <span class="region">${region}</span> </p>
-                    <p class="card-text mb-4"> <b>Capital:</b> <span class="capital">${capital}</span> </p>
-                </div>
-            </div>`
+                    <img src="${flagUrl}" class="card-img-top" alt="img">
+                    <div class="card-body c-body px-4">
+                        <h5 class="mt-2"><b>${name}</b></h5>
+                        <p class="card-text mb-1 mt-3"> <b>Population:</b> <span class="population">${population}</span> </p>
+                        <p class="card-text mb-1"> <b>Region:</b> <span class="region">${region}</span> </p>
+                        <p class="card-text mb-4"> <b>Capital:</b> <span class="capital">${capital}</span> </p>
+                    </div>
+                </div>`
     });
 
     flagsDiv.innerHTML = str;
