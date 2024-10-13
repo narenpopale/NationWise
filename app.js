@@ -1,6 +1,7 @@
 const flagsDiv = document.querySelector("#flags");
 const regionDropdown = document.querySelector("#region-dropdown");
 const input = document.querySelector("input");
+let cards = document.querySelectorAll(".card");
 
 
 let data;
@@ -11,6 +12,16 @@ let getData = async () => {
     let promise = await fetch("./data.json");
     let data = await promise.json();
     return data;
+}
+
+
+let getCards = () => {
+    cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+        card.addEventListener("click", () => {
+            console.log(card.getAttribute("id"));
+        })
+    })
 }
 
 
@@ -29,8 +40,9 @@ let displayData = (data) => {
         let region = checkNull(obj.region);
         let capital = checkNull(obj.capital);
         let flagUrl = checkNull(obj.flags.png);
+        let id = obj.numericCode;
         
-        str += `<div class="card border border-0 shadow-sm" style="width: 18rem;">
+        str += `<div id="${id}" class="card border border-0 shadow-sm" style="width: 18rem;">
                 <img src="${flagUrl}" class="card-img-top" alt="img">
                 <div class="card-body c-body px-4">
                     <h5 class="mt-2"><b>${name}</b></h5>
@@ -42,6 +54,7 @@ let displayData = (data) => {
     });
 
     flagsDiv.innerHTML = str;
+    getCards();
 }
 
 

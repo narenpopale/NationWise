@@ -1,0 +1,35 @@
+
+#info {
+    display: flex;
+}
+
+#info .img img {
+    width: 80%;
+}
+
+.content .second {
+    display: flex;
+}
+
+.content .second p {
+    margin-bottom: 1vh;
+}
+
+.content .third {
+    display: flex;
+}
+
+.content .third .left {
+    width: 30%;
+}
+
+.content .third .right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    width: 70%;
+}
+
+.content .third .right p {
+    margin-bottom: 1vh;
+}
