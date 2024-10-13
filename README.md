@@ -15,6 +15,7 @@ NationWise is a web application that provides users with information about all t
 - **CSS3**: For styling and layout.
 - **JavaScript (JS)**: For interactive features and functionality.
 - **Bootstrap**: To ensure a mobile-first, responsive design.
+- **Data Source**: REST Countries API.
 
 ## How to Use
 
