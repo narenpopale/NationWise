@@ -3,8 +3,16 @@
     display: flex;
 }
 
+#info .img {
+    width: 50%;
+}
+
 #info .img img {
     width: 80%;
+}
+
+.content {
+    width: 50%;
 }
 
 .content .second {
@@ -13,6 +21,14 @@
 
 .content .second p {
     margin-bottom: 1vh;
+}
+
+.content .second .left {
+    width: 50%;
+}
+
+.content .second .right {
+    width: 50%;
 }
 
 .content .third {

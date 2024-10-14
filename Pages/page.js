@@ -76,22 +76,22 @@ let displayData = (data) => {
     
 
     countryInfo.innerHTML = `
-            <div class="img w-50">
+            <div class="img">
                 <img class="shadow" src="${flagUrl}" alt="img">
             </div>
-            <div class="content w-50">
+            <div class="content">
                 <div class="first mt-4">
                     <h2><b>${name}</b></h2>
                 </div>
                 <div class="second mt-4">
-                    <div class="left w-50">
+                    <div class="left">
                         <p> <b>Native Name:</b> ${nativeName} </p>
                         <p> <b>Population:</b> ${population} </p>
                         <p> <b>Region:</b> ${region} </p>
                         <p> <b>Sub Region:</b> ${subRegion} </p>
                         <p> <b>Capital:</b> ${capital} </p>
                     </div>
-                    <div class="right w-50">
+                    <div class="right">
                         <p> <b>Top Level Domain:</b> ${topLevelDomain} </p>
                         <p> <b>Currencies:</b> ${currencyName} </p>
                         <p> <b>Languages:</b> ${languages} </p>

@@ -1,0 +1,53 @@
+@media (max-width:600px) {
+    #nav {
+        height: 12vh;
+    }
+    
+    #info {
+        display: block;
+    }
+
+    #info .img {
+        width: 80%;
+        margin: auto;
+    }
+    
+    #info .img img {
+        width: 100%;
+    }
+    
+    .content {
+        width: 80%;
+        margin: auto;
+        display: block;
+    }
+
+    .first h2 {
+        text-align: center;
+    }
+
+    .content .second {
+        display: block;
+    }
+
+    .content .second .left {
+        width: 100%;
+    }
+
+    .content .second .right {
+        width: 100%;
+    }
+
+    .content .third {
+        display: block;
+    }
+
+    .content .third .left {
+        width: 100%;
+    }
+    
+    .content .third .right {
+        gap: 10px;
+        width: 100%;
+    }
+}
